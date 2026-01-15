@@ -1,0 +1,282 @@
+/* === TYPOGRAPHY LOAD === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+
+/* RESET & GLOBAL LAYOUT */
+* {
+  box-sizing: border-box;  /* ensures padding and border don't exceed width */
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;      /* prevent horizontal scroll */
+  font-family: 'Inter', sans-serif;
+  background-color: #F7F3EB;
+  color: #111;
+}
+
+/* === GLOBAL === */
+body {
+  background-color: #F7F3EB; /* editorial off-white */
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* === NAV === */
+nav {
+  width: 100%;
+  padding: 20px 40px;     /* smaller padding prevents overflow */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: sticky;
+  top: 0;
+  background: transparent;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px;
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: #C9A66B;
+}
+
+/* Page title styling */
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 42px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  max-width: 850px;       /* same as content */
+  text-align: left;        /* align left inside the content block */
+}
+
+
+/* === MAIN CONTENT === */
+
+/* MAIN CONTENT */
+
+main, .content {
+  max-width: 900px;       /* keeps content from stretching too far */
+  margin: 0 auto;         /* centers content horizontally */
+  padding: 40px 20px;     /* space on top/bottom and sides */
+}
+
+.content {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* HERO / ABOUT PAGE */
+.hero {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center; /* centers portrait and bio */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.portrait {
+  max-width: 240px;
+  border-radius: 4px;
+  display: block;
+}
+
+.bio {
+  text-align: left;
+  max-width: 700px;
+}
+
+.bio p {
+  margin-bottom: 20px;  /* space after each paragraph */
+  line-height: 1.6;     /* optional: makes text more readable */
+}
+
+/* NAME UNDER PORTRAIT */
+/* Name under portrait on index.html */
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;  /* same as other h1 titles */
+  font-weight: 300;
+  font-size: 42px;                           /* same as other h1 titles */
+  text-align: left;                           /* align left like titles on other pages */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* === PAPER / PUBLICATION === */
+.paper {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.paper h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.coauthors {
+  font-size: 10px;
+  color: #888;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.paper-links {
+  margin-top: 10px;   /* space below abstract */
+  display: flex;
+  gap: 10px;          /* space between multiple links */
+}
+
+.content h2 {
+  margin-top: 60px;   /* space above each section */
+  margin-bottom: 20px; /* space below the heading */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.patent-pending {
+  cursor: default;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* === ABSTRACT TOGGLE BUTTON === */
+.abstract-toggle {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #C9A66B;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* Arrow next to the button */
+.abstract-toggle::after {
+  content: " ▾";
+}
+
+/* When expanded, arrow flips */
+.abstract-toggle.active::after {
+  content: " ▴";
+}
+
+/* Abstract content */
+.abstract {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  max-width: 700px;
+}
+
+.abstract.show {
+  display: block;
+}
+
+/* Links */
+a {
+  color: #C9A66B;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ART GALLERY / RECENT WORK */
+.art-piece {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Regular art pieces */
+.art-piece img {
+  width: 100%;
+  max-width: 600px; /* smaller images */
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Featured art */
+.art-piece img.featured-art {
+  width: 100%;
+  max-width: 900px; /* larger featured image */
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.art-title {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.art-credits {
+  font-size: 12px;
+  color: #888;
+}
+
+
+/* CONTACT IMAGES */
+.contact-images {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  gap: 20px;              /* space between images */
+  margin-top: 30px;
+}
+
+.contact-img {
+  width: 100%;
+  max-width: 670px; /* slightly bigger for featured image */
+  height: auto;
+  border-radius: 4px;
+}
+
+/* art hyperlinks */
+.art-page .content a,
+.art-page .content a:visited,
+.art-page .content a:hover,
+.art-page .content a:focus {
+  color: inherit;
+  text-decoration: none;
+}
